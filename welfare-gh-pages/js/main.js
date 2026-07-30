@@ -255,11 +255,15 @@ AOS.init({
     $('#donationModal').modal('show');
   });
 
-  $('#sendDonationBtn').on('click', function() {
+  $(document).on('click', '#sendDonationBtn', function() {
     var amount = $('#donationAmount').val();
     var cause = $('#donationCause').val();
-    var name = $('#donorName').val();
+    var name = $('#donorName').val().trim();
 
+    if (!name) {
+      alert('Please enter your name.');
+      return;
+    }
     if (!amount || amount <= 0) {
       alert('Please enter a valid donation amount.');
       return;
@@ -270,7 +274,7 @@ AOS.init({
     }
 
     var message = 'Hello! I want to make a donation.%0A';
-    message += 'Name: ' + (name || 'Anonymous') + '%0A';
+    message += 'Name: ' + name + '%0A';
     message += 'Amount: $' + amount + '%0A';
     message += 'Cause: ' + cause + '%0A';
     message += 'Bank: ' + BANK_NAME + '%0A';

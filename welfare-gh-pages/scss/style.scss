@@ -8,10 +8,12 @@ $white: #fff;
 $black: #000;
 $darken: #4a5562;
 
-$primary: #f86f2d;
-$secondary: #fa8f3d;
-$tertiary: #faaa3a;
+$primary: #600f20;
+$secondary: #7a1a30;
+$tertiary: #9a2240;
 $quarternary: #7cbd1e;
+$body-bg: #faf0ea;
+$section-bg: #f4e4da;
 
 
 @mixin border-radius($radius) {
@@ -34,7 +36,7 @@ html {
 }
 body {
 	font-family: $font-primary;
-	background: $white;
+	background: $body-bg;
 	font-size: 16px;
 	line-height: 1.8;
 	font-weight: 300;
@@ -460,7 +462,7 @@ h1, h2, h3, h4, h5,
 
 
 .bg-light {
-	background: lighten($black,98%)!important;
+	background: $section-bg;
 }
 
 .bg-primary{
@@ -1029,7 +1031,7 @@ h1, h2, h3, h4, h5,
 			left: 0;
 			right: 0;
 			z-index: 1;
-			background: $white;	
+	background: $body-bg;
 			visibility: hidden;
 			opacity: 0;
 			height: 0;
